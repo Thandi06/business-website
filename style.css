@@ -1,27 +1,39 @@
-body{
+/* General styles */
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:bisque;
+    color: bisque;
+    margin: 0;
+    padding: 0;
 }
-header img{
+
+header img {
     border-radius: 100%;
     box-shadow: 0 2px 20px rgba(51, 51, 53, 0.904);
 }
-.container{
+
+.container {
     max-width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    /* Allows wrapping on small screens */
     justify-content: space-around;
     background-color: #fff;
-    background: linear-gradient(to right, #155263,#ff6f3c );
+    background: linear-gradient(to right, #155263, #ff6f3c);
     padding: 20px;
-
 }
-.second-container{
+
+.second-container {
     max-width: 50%;
     padding: 30px;
-
-
 }
-.serve{
+
+/* Responsive header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.serve {
     display: block;
     border-radius: 30px;
     border: 1px solid orangered;
@@ -31,16 +43,19 @@ header img{
     text-align: center;
     box-shadow: 0 2px 20px rgba(51, 51, 53, 0.904);
 }
-.service{
+
+.service {
     display: flex;
     justify-content: space-between;
     gap: 40px;
 }
-.contact{
+
+.contact {
     display: flex;
     justify-content: space-around;
 }
-.images{
+
+.images {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -51,12 +66,12 @@ header img{
     margin-top: 120px;
     padding: 50px;
     transition: transform 0.3s;
-    
-    
 }
-img{
+
+img {
     transition: transform 0.3s;
 }
+
 img:hover {
     transform: scale(1.3);
     cursor: pointer;
@@ -67,4 +82,82 @@ img:hover {
     border-radius: 100px;
     box-shadow: 0 2px 20px rgba(51, 51, 53, 0.904);
     vertical-align: middle;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Stacks elements on smaller screens */
+        padding: 10px;
+    }
+
+    .second-container {
+        max-width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .service {
+        flex-direction: column;
+        /* Stacks service items vertically */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .images {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .second-container img {
+        width: 100%;
+        /* Adjusts image width to fit container */
+    }
+
+    header img {
+        width: 80px;
+        /* Makes logo smaller on mobile */
+    }
+
+    header {
+        font-size: 16px;
+    }
+
+    .serve {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .contact {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    .serve {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    header img {
+        width: 60px;
+        /* Even smaller logo for very small screens */
+    }
+
+    .second-container img {
+        width: 100%;
+    }
+
+    .service,
+    .contact {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
