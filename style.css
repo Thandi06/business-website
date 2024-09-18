@@ -26,6 +26,12 @@ header img {
     max-width: 50%;
     padding: 30px;
 }
+.link{
+    color:bisque;
+}
+a {
+    text-decoration: none;
+}
 
 /* Responsive header */
 header {
